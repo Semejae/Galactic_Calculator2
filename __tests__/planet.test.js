@@ -1,4 +1,4 @@
-// import Planet './../src/planet.js'
+import Planet from './../src/js/planet.js'
 
 
 describe ('Planet', () => {
@@ -15,4 +15,4 @@ describe ('Planet', () => {
     expect(planet.jupiterAge).toEqual(0);
     expect(planet.earthAge).toEqual(0);
   });
-});  a
+});  
