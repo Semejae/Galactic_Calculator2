@@ -23,5 +23,5 @@ export default class Planet {
     this.jupiterAge = parseInt((this.age/11.86).toFixed(0));
     this.earthAge = parseInt((this.age/1).toFixed(0));
     this.yearsLeftToLive = parseInt((this.age));
-  }
+  } 
 }
