@@ -7,13 +7,10 @@ import Planet from './planet.js';
 window.addEventListener('load',function(){
   
   let input = this.document.getElementById('input')
-  input.addEventListener('submit',function(event){
-    event.preventDefault();
-    let planet = new Planet(humanAge,ethnicGroup,planetGroup);
+  input.addEventListener('submit',function(){
     const humanAge = document.querySelector('#age').value;
-    const ethnicGroup = document.querySelector('#input2').value;
-    const planetGroup = document.querySelector('#input3').value;
+    let planet = new Planet(humanAge);
     planet.convertToYears();
     planet.lifeExpectancy();
-  })
-})
+  });
+});
