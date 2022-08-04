@@ -16,3 +16,16 @@ describe ('Planet', () => {
     expect(planet.earthAge).toEqual(0);
   });
 });  
+
+describe ('convertToYears', () => {
+
+  test('should convert earth years to mercury years', () => {
+    const planet = new Planet(50);
+    planet.convertToYears();
+    expect(planet.mercuryAge).toEqual(208);
+    expect(planet.venusAge).toEqual(81);
+    expect(planet.marsAge).toEqual(27);
+    expect(planet.jupiterAge).toEqual(4);
+    expect(planet.earthAge).toEqual(50);
+  });
+});
