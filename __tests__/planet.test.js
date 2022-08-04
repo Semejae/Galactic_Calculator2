@@ -34,10 +34,12 @@ describe ('lifeExpectancy', () => {
 
   test('should subtract age from expectancy', () => {
     const planet = new Planet(50);
-    const oldPlanet = new Planet(100);
     planet.lifeExpectancy();
-    oldPlanet.lifeExpectancy();
     expect(planet.yearsLeftToLive).toEqual(30);
-    expect(planet.yearsOverExpectancy).toEqual(20);
+  });
+  test('should subtract age from expectancy', () => {
+    const oldPlanet = new Planet(100);
+    oldPlanet.lifeExpectancy();
+    expect(oldPlanet.yearsOverExpectancy).toEqual(20);
   });
 });

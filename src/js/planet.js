@@ -24,4 +24,11 @@ export default class Planet {
     this.earthAge = parseInt((this.age/1).toFixed(0));
     this.yearsLeftToLive = parseInt((this.age));
   } 
-}
+
+  lifeExpectancy(){
+    if (this.age < this.expectancy) {
+      this.yearsLeftToLive = this.expectancy - this.age;
+    } else (this.age > this.expectancy)
+      this.yearsOverExpectancy = this.age - this.expectancy;
+  };
+};
