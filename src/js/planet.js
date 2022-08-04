@@ -12,7 +12,7 @@ export default class Planet {
     this.jupiterAge = 0;
     this.earthAge = 0;
     this.yearsLeftToLive = 0;
-    this.yearsOverExpectaancy = 0;
+    this.yearsOverExpectancy = 0;
     this.planetsAge = [this.mercuryAge,this.venusAge,this.marsAge,this.jupiterAge,this.earthAge];
   }
 
