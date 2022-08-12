@@ -50,6 +50,8 @@
 * _html_
 * _javascript_
 * _css_
+* _webpack_
+* _jest_
 
 ## Description 
 _this page shows you your age and expectancy on planets_

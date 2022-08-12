@@ -43,3 +43,12 @@ describe ('lifeExpectancy', () => {
     expect(oldPlanet.yearsOverExpectancy).toEqual(20);
   });
 });
+
+describe ('lifeOver', () => {
+
+  test('should alert if age is over or under the expectancy', () => {
+    const death = new Planet(0)
+    death.death();
+    expect(death.yearsLeftToLive)
+  });
+});
