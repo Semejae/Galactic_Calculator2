@@ -24,4 +24,15 @@ export default class Astro {
     return parseFloat(currentAge.toFixed(2))
   }
 
+  // yearsLeft() {
+  //   let expect = 65 - this.age;
+  //   let daysLeft = 0;
+  //   if(this.planet === 'earth') {
+  //     daysLeft = expect / 1;
+  //   } else if (this.planet === 'mars') {
+  //     daysLeft = expect / 1.88;
+  //   } else if (this.planet === 'mars') {
+  //     daysLeft = expect / 1.88;
+  // }
+
 }
