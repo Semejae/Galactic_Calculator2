@@ -5,42 +5,128 @@
 ### _{this is a page to return age and expectancy from different planets}_
 
 ## test:
-*_describe: Planet()_
+*_describe ('Astro', () => {
 
-*_test: should return planet function_
-*_code: const planet = new Planet(50);_
-*_expect(planet.age).toEqual(50);_
-*_expect(planet.name).toEqual(['mercury','venus','mars','jupiter','earth']);_
-*_expect(planet.year).toEqual([.24,.62,1.88,11.86,1]);_
-*_expect(planet.expectancy).toEqual(80);_
-*_expect(planet.mercuryAge).toEqual(0);_
-*_expect(planet.venusAge).toEqual(0);_
-*_expect(planet.marsAge).toEqual(0);_
-*_expect(planet.jupiterAge).toEqual(0);_
-*_expect(planet.earthAge).toEqual(0);_
-      *_expect(planet.yearsLeftToLive).toEqual(0);_
+  test('should return astro object properties', () => {
+    const person = new Astro(30, 'mars');
+    expect(person.age).toEqual(30);
+    expect(person.planet).toEqual('mars');
+  });
 
+describe('Astro#currentYears', () => {
 
-*_describe: convertToYears()_
+  test("should create a prototype for user age based on the value 'earth' for the planet property ",() =>{
+    const person = new Astro(30,'earth');
+    expect(person.planet).toEqual('earth');
+    expect(person.currentYears()).toEqual(30);
+  });
+  
+  test("should create a prototype for user age based on the value 'mars' for the planet property ",() =>{
+    const person = new Astro(30, 'mars');
+    expect(person.planet).toEqual('mars');
+    expect(person.currentYears()).toEqual(15.96);
+  });
 
-*_test: should convert earth years to mercury years_
-*_code: const planet = new Planet(50);_
-*_code: planet.convertToYears();_
-*_expect(planet.mercuryAge).toEqual(208);_
-*_expect(planet.venusAge).toEqual(81);_
-*_expect(planet.marsAge).toEqual(27);_
-*_expect(planet.jupiterAge).toEqual(4);_
-*_expect(planet.earthAge).toEqual(50);_
+  test("should create a prototype for user age based on the value 'mercury' for the planet property ",() =>{
+    const person = new Astro(30, 'mercury');
+    expect(person.planet).toEqual('mercury');
+    expect(person.currentYears()).toEqual(125);
+  });
 
-*_describe ('lifeExpectancy', () => {
+  test("should create a prototype for user age based on the value 'venus' for the planet property ", () =>{
+    const person = new Astro(30, 'venus');
+    expect(person.planet).toEqual('venus');
+    expect(person.currentYears()).toEqual(48.39)
+  });
 
-*_test: should subtract age from expectancy_
-*_code: const planet = new Planet(50);_
-*_code: const oldPlanet = new Planet(100);_
-*_code: planet.lifeExpectancy();_
-*_oldPlanet.lifeExpectancy();_
-*_expect(planet.yearsLeftToLive).toEqual(30);_
-*_expect(oldPlanet.yearsOverExpectancy).toEqual(20)_
+  test("should create a prototype for user age based on the value 'jupiter' for the planet property ", () => {
+    const person = new Astro(30, 'jupiter')
+    expect(person.planet).toEqual('jupiter');
+    expect(person.currentYears()).toEqual(2.53)
+  });
+
+  test("should return 'please, pick a planet' if no value", () => {
+    const person = new Astro(30, '');
+    expect(person.planet).toEqual('');
+    expect(person.currentYears()).toEqual('please, pick a planet');
+  });
+});
+describe('Astro#yearsLeft', () => {
+
+  test("should create prototype for users remaining life on planet 'earth' property", () => {
+    const person = new Astro(30, 'earth');
+    expect(person.planet).toEqual('earth');
+    expect(person.yearsLeft()).toEqual(35)
+  });
+
+  test("should create prototype for users remaining life on planet 'mars' property", () => {
+    const person = new Astro(30, 'mars');
+    expect(person.planet).toEqual('mars');
+    expect(person.yearsLeft()).toEqual(18.62)
+  });
+
+  test("should create prototype for users remaining life on planet 'mercury' property", () => {
+    const person = new Astro(30, 'mercury');
+    expect(person.planet).toEqual('mercury');
+    expect(person.yearsLeft()).toEqual(145.83)
+  });
+
+  test("should create prototype for users remaining life on planet 'venus' property", () => {
+    const person = new Astro(30, 'venus');
+    expect(person.planet).toEqual('venus');
+    expect(person.yearsLeft()).toEqual(56.45)
+  });
+
+  test("should create prototype for users remaining life on planet 'jupiter' property", () => {
+    const person = new Astro(30, 'jupiter');
+    expect(person.planet).toEqual('jupiter');
+    expect(person.yearsLeft()).toEqual(2.95)
+  });
+  
+  test("should return 'please, pick a planet' property", () => {
+    const person = new Astro(30, '');
+    expect(person.planet).toEqual('');
+    expect(person.yearsLeft()).toEqual('please, pick a planet');
+  });
+});
+
+describe('Astro#yearsOver', () => {
+
+  test('should create a "yearsOver" method that returns the message "you outlived your life by" plus a positive number of years if user is over their expectancy',() =>{
+    const person = new Astro(80, 'earth');
+    expect(person.planet).toEqual('earth');
+    expect(person.yearsOver()).toEqual('you outlived your life by15.00years.')
+  });
+
+  test('should update "yearsOver" method based on mars',() =>{
+    const person = new Astro(80, 'mars');
+    expect(person.planet).toEqual('mars');
+    expect(person.yearsOver()).toEqual('you outlived your life by7.98years.')
+  });
+
+  test('should update "yearsOver" method based on mercury',() =>{
+    const person = new Astro(80, 'mercury');
+    expect(person.planet).toEqual('mercury');
+    expect(person.yearsOver()).toEqual('you outlived your life by62.50years.')
+  });
+
+  test('should update "yearsOver" method based on venus',() =>{
+    const person = new Astro(80, 'venus');
+    expect(person.planet).toEqual('venus');
+    expect(person.yearsOver()).toEqual('you outlived your life by24.19years.')
+  });
+
+  test('should update "yearsOver" method based on jupiter',() =>{
+    const person = new Astro(80, 'jupiter');
+    expect(person.planet).toEqual('jupiter');
+    expect(person.yearsOver()).toEqual('you outlived your life by1.26years.')
+  });
+
+  test("should return 'please, pick a planet' property", () => {
+    const person = new Astro(80, '');
+    expect(person.planet).toEqual('');
+    expect(person.yearsOver()).toEqual('please, pick a planet');
+  });
 
 
 ## technologies used 
