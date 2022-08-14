@@ -50,23 +50,33 @@ describe('Astro#currentYears', () => {
 describe('Astro#yearsLeft', () => {
 
   test("should create prototype for users remaining life on planet 'earth' property", () => {
-
+    const person = new Astro(30, 'earth');
+    expect(person.planet).toEqual('earth');
+    expect(person.yearsLeft()).toEqual()
   });
 
   test("should create prototype for users remaining life on planet '' property", () => {
-
+    const person = new Astro(30, 'mars');
+    expect(person.planet).toEqual('mars');
+    expect(person.yearsLeft()).toEqual()
   });
 
   test("should create prototype for users remaining life on planet '' property", () => {
-
+    const person = new Astro(30, 'venus');
+    expect(person.planet).toEqual('venus');
+    expect(person.yearsLeft()).toEqual()
   });
 
   test("should create prototype for users remaining life on planet '' property", () => {
-
+    const person = new Astro(30, 'jupiter');
+    expect(person.planet).toEqual('jupiter');
+    expect(person.yearsLeft()).toEqual()
   });
 
-  test("should create prototype for users remaining life on planet '' property", () => {
-
+  test("should return 'please, pick a planet' property", () => {
+    const person = new Astro(30, '');
+    expect(person.planet).toEqual('');
+    expect(person.yearsLeft()).toEqual('please, pick a planet');
   });
 
   
