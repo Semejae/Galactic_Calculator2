@@ -47,4 +47,28 @@ describe('Astro#currentYears', () => {
     expect(person.currentYears()).toEqual('please, pick a planet');
   });
 });
+describe('Astro#yearsLeft', () => {
+
+  test("should create prototype for users remaining life on planet 'earth' property", () => {
+
+  });
+
+  test("should create prototype for users remaining life on planet '' property", () => {
+
+  });
+
+  test("should create prototype for users remaining life on planet '' property", () => {
+
+  });
+
+  test("should create prototype for users remaining life on planet '' property", () => {
+
+  });
+
+  test("should create prototype for users remaining life on planet '' property", () => {
+
+  });
+
+  
+})
 });
