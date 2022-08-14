@@ -1,4 +1,4 @@
-<!-- ## galatic calculator2
+## galatic calculator2
 
 ### by_**{Anthony-Gladden}**_
 
@@ -175,4 +175,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 _refresh page if issues occur or conatact me a.gladden360@outlook.com_
 
 
-_Copyright (c) 07/31/2022 Anthony Gladden_ -->
+_Copyright (c) 07/31/2022 Anthony Gladden_
