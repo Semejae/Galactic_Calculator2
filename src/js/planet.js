@@ -43,4 +43,24 @@ export default class Astro {
     return parseFloat(daysLeft.toFixed(2))
   }
 
+  yearsOver() {
+    let expect = 65 - this.age;
+    let moreYears = 0;
+    if (Math.sign(expect) === -1) {
+      if (this.planet === 'earth') {
+        moreYears = 'you outlived your life by' + (parseFloat((expect / 1) * -1).toFixed(2)) + 'years.';
+      } else if (this.planet === 'mars') {
+        moreYears = 'you outlived your life by' + (parseFloat((expect / 1.88) * -1).toFixed(2)) + 'years.';
+      } else if (this.planet === 'mercury') {
+        moreYears = 'you outlived your life by' + (parseFloat((expect / 0.24) * -1).toFixed(2)) + 'years.';
+      } else if (this.planet === 'venus') {
+        moreYears = 'you outlived your life by' + (parseFloat((expect / 0.62) * -1).toFixed(2)) + 'years.';
+      } else if (this.planet === 'jupiter') {
+        moreYears = 'you outlived your life by' + (parseFloat((expect / 11.86) * -1).toFixed(2)) + 'years.';
+      } else {
+        return 'please, pick a planet'
+    }
+    return moreYears;
+  }
+}
 }
