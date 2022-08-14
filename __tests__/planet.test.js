@@ -20,7 +20,7 @@ describe('Astro#currentYears', () => {
   test("should create a prototype for user age based on the value 'mars' for the planet property ",() =>{
     const person = new Astro(30, 'mars');
     expect(person.planet).toEqual('mars');
-    expect(person.currentYears()).toEqual(15.95);
+    expect(person.currentYears()).toEqual(15.96);
   });
 
   test("should create a prototype for user age based on the value 'mercury' for the planet property ",() =>{
