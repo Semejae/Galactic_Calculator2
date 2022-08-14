@@ -84,7 +84,44 @@ describe('Astro#yearsLeft', () => {
     expect(person.planet).toEqual('');
     expect(person.yearsLeft()).toEqual('please, pick a planet');
   });
+});
 
-  
-})
+describe('Astro#yearsOver', () => {
+
+  test('should create a "yearsOver" method that returns the message "you outlived your life" plus a positive number of years if user is over their expectancy',() =>{
+    const person = new Astro(80, 'earth');
+    expect(person.planet).toEqual('earth');
+    expect(person.yearsOver()).toEqual('you outlived your life')
+  });
+
+  test('should update "yearsOver" method based on mars',() =>{
+    const person = new Astro(80, 'mars');
+    expect(person.planet).toEqual('mars');
+    expect(person.yearsOver()).toEqual('you outlived your life')
+  });
+
+  test('should update "yearsOver" method based on mercury',() =>{
+    const person = new Astro(80, 'mercury');
+    expect(person.planet).toEqual('mercury');
+    expect(person.yearsOver()).toEqual('you outlived your life')
+  });
+
+  test('should update "yearsOver" method based on venus',() =>{
+    const person = new Astro(80, 'venus');
+    expect(person.planet).toEqual('venus');
+    expect(person.yearsOver()).toEqual('you outlived your life')
+  });
+
+  test('should update "yearsOver" method based on jupiter',() =>{
+    const person = new Astro(80, 'jupiter');
+    expect(person.planet).toEqual('jupiter');
+    expect(person.yearsOver()).toEqual('you outlived your life')
+  });
+
+  test("should return 'please, pick a planet' property", () => {
+    const person = new Astro(80, '');
+    expect(person.planet).toEqual('');
+    expect(person.yearsOver()).toEqual('please, pick a planet');
+  });
+});
 });
