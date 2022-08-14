@@ -24,15 +24,23 @@ export default class Astro {
     return parseFloat(currentAge.toFixed(2))
   }
 
-  // yearsLeft() {
-  //   let expect = 65 - this.age;
-  //   let daysLeft = 0;
-  //   if(this.planet === 'earth') {
-  //     daysLeft = expect / 1;
-  //   } else if (this.planet === 'mars') {
-  //     daysLeft = expect / 1.88;
-  //   } else if (this.planet === 'mars') {
-  //     daysLeft = expect / 1.88;
-  // }
+  yearsLeft() {
+    let expect = 65 - this.age;
+    let daysLeft = 0;
+    if(this.planet === 'earth') {
+      daysLeft = expect / 1;
+    } else if (this.planet === 'mars') {
+      daysLeft = expect / 1.88;
+    } else if (this.planet === 'mercury') {
+      daysLeft = expect / 0.24;
+    } else if (this.planet === 'venus') {
+      daysLeft = expect / 0.62;
+    } else if (this.planet === 'jupiter') {
+      daysLeft = expect / 11.86;
+    } else {
+      return 'please, pick a planet'
+    }
+    return parseFloat(daysLeft.toFixed(2))
+  }
 
 }
