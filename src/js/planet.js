@@ -46,7 +46,7 @@ export default class Astro {
   yearsOver() {
     let expect = 65 - this.age;
     let moreYears = 0;
-    if (Math.sign(expect) === -1) {
+    if (expect < 0) {
       if (this.planet === 'earth') {
         moreYears = 'you outlived your life by' + (parseFloat((expect / 1) * -1).toFixed(2)) + 'years.';
       } else if (this.planet === 'mars') {
@@ -59,8 +59,10 @@ export default class Astro {
         moreYears = 'you outlived your life by' + (parseFloat((expect / 11.86) * -1).toFixed(2)) + 'years.';
       } else {
         return 'please, pick a planet'
+      }
+    } else {
+      return 'youre too young';
     }
     return moreYears;
   }
-}
 }

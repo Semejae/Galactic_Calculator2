@@ -118,6 +118,12 @@ describe('Astro#yearsOver', () => {
     expect(person.yearsOver()).toEqual('you outlived your life by1.26years.')
   });
 
+  test('should return error message if math.sign is not equal to -1', () => {
+    const person = new Astro(10); 
+      let reply = person.yearsOver();
+    expect(reply).toEqual('youre too young');
+  });
+
   test("should return 'please, pick a planet' property", () => {
     const person = new Astro(80, '');
     expect(person.planet).toEqual('');
